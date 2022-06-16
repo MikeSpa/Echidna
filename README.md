@@ -17,3 +17,4 @@ Echidna will:
 echidna-test contract.sol [--contract MyContract]
 
 ![](img/echidna-test.png)
+![](img/echidna-test-passed.png)
