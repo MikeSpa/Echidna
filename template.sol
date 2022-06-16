@@ -1,3 +1,5 @@
+pragma solidity ^0.5.11;
+
 import "token.sol";
 
 contract TestToken is Token {
