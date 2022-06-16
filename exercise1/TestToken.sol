@@ -1,6 +1,6 @@
 pragma solidity ^0.5.11;
 
-import "token.sol";
+import "./Token.sol";
 
 contract TestToken is Token {
     address echidna_caller = msg.sender;
