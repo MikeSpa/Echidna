@@ -11,6 +11,6 @@ contract TestToken is Token {
 
     // add the property
     function echidna_test_balance() public view returns (bool) {
-        return balances[msg.sender] <= 1000;
+        return balances[echidna_caller] <= 10000;
     }
 }
