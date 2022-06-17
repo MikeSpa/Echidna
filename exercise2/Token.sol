@@ -3,7 +3,7 @@ pragma solidity ^0.5.11;
 contract Ownership {
     address owner = msg.sender;
 
-    function Owner() public {
+    function Owner() public isOwner {
         owner = msg.sender;
     }
 
