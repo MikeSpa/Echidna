@@ -14,4 +14,8 @@ contract TestToken is Token {
     function echidna_no_transfer() public view returns (bool) {
         return balances[echidna_caller] == 0;
     }
+
+    function echidna_cannot_be_unpaused() public view returns (bool) {
+        return is_paused;
+    }
 }
