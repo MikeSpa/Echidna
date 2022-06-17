@@ -1,5 +1,6 @@
 # [Echidna Tutorial exercises](https://github.com/crytic/building-secure-contracts/tree/master/program-analysis/echidna)
 
+
 ## Properties
 
 Echidna properties are Solidity functions. A property must:
@@ -18,3 +19,21 @@ echidna-test contract.sol [--contract MyContract]
 
 ![](img/echidna-test.png)
 ![](img/echidna-test.passed.png)
+
+
+
+
+## Installation
+
+```
+docker pull trailofbits/eth-security-toolbox
+docker run -it -v "$PWD":/home/training trailofbits/eth-security-toolbox
+```
+
+Inside the container:
+```
+solc-select use 0.5.11
+cd /home/training
+```
+
+
