@@ -1,5 +1,6 @@
 # [Echidna Tutorial exercises](https://github.com/crytic/building-secure-contracts/tree/master/program-analysis/echidna)
 
+Repo to learn/test Echidna.
 
 ## Properties
 
@@ -82,6 +83,7 @@ This will ensure that `balance` is always between `MIN_BALANCE` and `MAX_BALANCE
 
 ## Docs
 [Config file](https://github.com/crytic/echidna/wiki/Config)  
+[default.yaml](https://github.com/crytic/echidna/blob/master/tests/solidity/basic/default.yaml)
 
 ## Installation
 

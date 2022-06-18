@@ -1,0 +1,8 @@
+#sender is set of addresses transactions may originate from
+sender: ["0x10000"]
+
+#contractAddr is the address of the contract itself
+contractAddr: "0x1234"
+
+#whether ot not to use the multi-abi mode of testing
+multi-abi: true  # allow the echidna to call function from other contracts
