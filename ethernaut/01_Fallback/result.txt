@@ -1,0 +1,11 @@
+echidna_test_cannot_become_owner: failed!💥  
+  Call sequence, shrinking (3118/5000):
+    contribute() Value: 0x1
+    receive() Value: 0x1
+
+
+echidna_test_cannot_empty_funds: failed!💥  
+  Call sequence, shrinking (3115/5000):
+    contribute() Value: 0x1
+    receive() Value: 0x1
+    withdraw()
