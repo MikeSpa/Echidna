@@ -46,25 +46,35 @@ Any of these testing modes can be used, in either stateful (by default) or state
 
 ## Filtering functions to call during a fuzzing campaign
 
-```
+```yaml
 filterBlacklist: true
 filterFunctions: ["C.f1()", "C.f2()", "C.f2(uint256)"]
 ```
-```
+```bash
 echidna-test contract.sol --config config.yaml  
 ```
+## Test assertions
+In our contract, we could use an assertion like this one : `assert(tmp >= counter);`, we could also use a special event called `AssertionFailed` with any number of parameters to let Echidna know about a failed assertion without using `assert`.  
+To enable the assertion failure testing in Echidna, you can use `--test-mode assertion` directly from the command line, or add 
+```yaml
+testMode: assertion
+```
+in our `config.yaml` file.  
+Assertions can be used as alternatives to explicit properties if the conditions to check are directly related to the correct use of some operation `f`. Adding assertions after some code will enforce that the check happens immediately after it was executed.
 
 
+## Docs
+[Config file](https://github.com/crytic/echidna/wiki/Config)  
 
 ## Installation
 
-```
+```bash
 docker pull trailofbits/eth-security-toolbox
 docker run -it -v "$PWD":/home/training trailofbits/eth-security-toolbox
 ```
 
 Inside the container:
-```
+```bash
 solc-select use 0.5.11
 cd /home/training
 ```
