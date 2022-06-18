@@ -62,6 +62,23 @@ testMode: assertion
 in our `config.yaml` file.  
 Assertions can be used as alternatives to explicit properties if the conditions to check are directly related to the correct use of some operation `f`. Adding assertions after some code will enforce that the check happens immediately after it was executed.
 
+## Filter input
+To filter inputs, `%` is more efficient than adding `require` or `if` statements. For example, if you are a fuzzing `operation(uint256 index, ..)` where `index` is supposed to be less than `10**18`, use:
+```solidity
+function operation(uint index, ...) public{
+   index = index % 10**18
+   ...
+}
+```
+This can also be generalized define a min and max range, for example:
+```solidity
+function operation(uint balance, ...) public{
+   balance = MIN_BALANCE + balance % (MAX_BALANCE - MIN_BALANCE);
+   ...
+}
+```
+This will ensure that `balance` is always between `MIN_BALANCE` and `MAX_BALANCE`, without discarding any generated transactions. As expected, this will speed up the exploration, but at the cost of avoiding certain paths in your code. To overcome this issue, the usual solution is to have two functions.
+
 
 ## Docs
 [Config file](https://github.com/crytic/echidna/wiki/Config)  
