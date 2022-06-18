@@ -1,0 +1,3 @@
+estimateGas: true
+filterBlacklist: true
+filterFunctions: ["PushPop.pop()", "PushPop.clear()"]
