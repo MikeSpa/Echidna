@@ -31,7 +31,7 @@ contract StakingContract is Ownable {
     );
     event LendingProtocolChanged(address newProtocol, address oldProtocol);
 
-    constructor(address _projectTokenAddress, address _lendingProtocol) public {
+    constructor(address _projectTokenAddress, address _lendingProtocol) {
         projectToken = IERC20(_projectTokenAddress);
         lendingProtocol = ILendingProtocol(_lendingProtocol);
     }
