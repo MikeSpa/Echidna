@@ -1,12 +1,12 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
-import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
+import "./Ownable.sol";
+import "./IERC20.sol";
+import "./AggregatorV3Interface.sol";
 
-import "../interfaces/ILendingPool.sol";
-import "../interfaces/ILendingProtocol.sol";
+import "./ILendingPool.sol";
+import "./ILendingProtocol.sol";
 
 contract StakingContract is Ownable {
     IERC20 public projectToken;
