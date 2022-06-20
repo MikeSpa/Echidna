@@ -7,16 +7,27 @@ import "./AaveLending.sol";
 
 contract Test {
     StakingContract stakingContract;
+    ILendingProtocol aaveLending;
+    ERC20 randomToken = new ERC20("Random Token", "RT");
 
     constructor() {
         // Create the target contract.
+        aaveLending = new AaveLending(address(0x50000));
         stakingContract = new StakingContract(
             address(new ProjectToken()),
-            address(new AaveLending(address(0x50000)))
+            address(aaveLending)
         );
     }
 
     function echidna_test_owner() public view returns (bool) {
         return stakingContract.owner() == address(this);
+    }
+
+    function echidna_cant_add_allowed_token() public view returns (bool) {
+        return !stakingContract.tokenIsAllowed(address(randomToken));
+    }
+
+    function echidna_cant_change_lending_protocol() public view returns (bool) {
+        return stakingContract.lendingProtocol() == aaveLending;
     }
 }
